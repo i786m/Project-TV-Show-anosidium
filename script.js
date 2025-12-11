@@ -1,10 +1,8 @@
-//You can edit ALL of the code here
-
 // Application state
 const state = {
 	allEpisodes: [],
 	searchTerm: '',
-	selectedEpisodeId: '',
+	selectedEpisodeID: '',
 };
 
 function setup() {
@@ -53,9 +51,13 @@ function createEpisodeCard(episode) {
 	).textContent = `S${seasonNumber}E${episodeNumber}`;
 
 	card.querySelector('time').textContent = `${episode.runtime} minutes`;
-  card.querySelector('time').setAttribute('datetime', `PT${episode.runtime}M`); 
-	card.querySelector('[data-episode-summary]').textContent =
-		episode.summary.replace(/<\/?p>/g, '').trim();
+	card.querySelector('time').setAttribute(
+		'datetime',
+		`PT${episode.runtime}M`
+	);
+	card.querySelector('[data-episode-summary]').textContent = episode.summary
+		.replace(/<\/?p>/g, '')
+		.trim();
 	card.querySelector('[data-episode-link]').href = episode.url;
 
 	return card;
