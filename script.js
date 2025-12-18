@@ -26,7 +26,7 @@ const state = {
 	selectedEpisodeID: '',
 	selectedShowID: '',
 	//data cache
-	showCache: {},
+	showCache: [],
 	episodeCache: {}, // stored by show id
 };
 
