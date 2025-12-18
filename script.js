@@ -188,7 +188,7 @@ function populateEpisodeSelector() {
 function setupEpisodeSelector() {
 	const selector = document.getElementById('episode-selector');
 
-	// Initial population with default show (ID 82)
+	// Initial population based on the currently loaded episodes
 	populateEpisodeSelector();
 
 	selector.addEventListener('change', (event) => {
