@@ -121,7 +121,9 @@ function createEpisodeCard(episode) {
 
 	card.querySelector('h3').textContent = episode.name;
 	const img = card.querySelector('img');
-	img.src = episode.image?.medium || 'https://placehold.co/600x400?text=No+Image';
+	img.src =
+		episode.image?.medium ||
+		'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%25" height="100%25" fill="%23cccccc"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="%23666666">No Image</text></svg>';
 	img.alt = `${episode.name} - Season ${episode.season} Episode ${episode.number}`;
 
 	const seasonNumber = String(episode.season).padStart(2, '0');
